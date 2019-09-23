@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: countries
+
+server:
+  port: 8090
+api:
+  url:
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,12 @@
+encrypt:
+  key: secret
+spring:
+  security:
+    user:
+      name: user
+      password: 123
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: false
