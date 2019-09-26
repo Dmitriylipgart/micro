@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      name: currency
+      uri: http://localhost:8010
+eureka:
+  client:
+    healthcheck:
+      enabled: true

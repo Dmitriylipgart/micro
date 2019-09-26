@@ -3,12 +3,13 @@ spring:
     name: countries
 
 server:
-  port: 8090
+  port: 8030
 api:
-  url:
+  url: https://restcountries.eu/rest/v2
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+

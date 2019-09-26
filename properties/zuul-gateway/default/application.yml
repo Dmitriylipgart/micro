@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: zuul-gateway
+
+server:
+  port: 8080
+zuul:
+  routes:
+    oauth-resource:
+      path: /resource/**
+      serviceId: resource-server
+    oauth:
+      path: /oauth/**
+      serviceId: auth-server
+    country:
+      path: /country/**
+      serviceId: countries
