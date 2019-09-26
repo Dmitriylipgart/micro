@@ -1,6 +1,6 @@
 spring:
   application:
-    name: auth
+    name: auth-server
   data:
     mongodb:
       database: imatrix

@@ -14,3 +14,7 @@ zuul:
     country:
       path: /country/**
       serviceId: countries
+security:
+  oauth2:
+    client:
+      origin: http://localhost:3000
