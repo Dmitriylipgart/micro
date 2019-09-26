@@ -1,6 +1,33 @@
 spring:
   application:
     name: auth
+  data:
+    mongodb:
+      database: imatrix
+      uri: "mongodb+srv://dev-imatrix:imatrix123@cluster0-1lbde.mongodb.net/imatrix?retryWrites=true&w=majority"
+  redis:
+    url: http://localhost:6379
+
+security:
+  oauth2:
+    client:
+      origin: http://localhost:3000
+      client-id: imatrix-app
+      client-secret: secret
+      scope: read, write
+      user-authorization-uri: http://localhost:8080/oauth/authorize
+      access-token-validity-seconds: 3600
+      refresh-token-validity-seconds: 30000
+      recovery-token-validity-seconds: 900
+      authorized-grant-types: password, refresh_token, authorization_code
+      authorities: ROLE_TRUSTED_CLIENT
+    resource:
+      id: /oauth2
+      user-info-uri: http://localhost:8080/user/me
+oauth2:
+  token:
+    key: token-key
+
 server:
   port: 8020
 
