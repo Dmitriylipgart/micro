@@ -1,6 +1,5 @@
 spring:
   cloud:
     config:
-      name: countries
+      name: auth
       uri: http://localhost:8010
-
