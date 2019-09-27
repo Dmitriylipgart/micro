@@ -5,12 +5,10 @@ server:
   port: 8088
 zuul:
   routes:
-    oauth-resource:
-      path: /resource/**
-      serviceId: resource-server
     oauth:
-      path: /oauth/**
+      path: /uaa/**
       serviceId: auth-server
+      sensitiveHeaders:
     country:
       path: /country/**
       serviceId: countries

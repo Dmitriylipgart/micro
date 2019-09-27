@@ -19,7 +19,6 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
-import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -73,7 +72,7 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
         tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer(), accessTokenConverter()));
 
         endpoints
-                .pathMapping("/oauth/token", "/token")
+//                .pathMapping("/oauth/token", "/token")
                 .reuseRefreshTokens(false)
                 .tokenStore(redisTokenStore())
                 .tokenEnhancer(tokenEnhancerChain)
@@ -119,7 +118,8 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
         CorsFilter filter = new CorsFilter(source);
         security
                 .tokenKeyAccess("permitAll()")
-                .checkTokenAccess("isAuthenticated()").allowFormAuthenticationForClients()
+                .checkTokenAccess("isAuthenticated()")
+//                .allowFormAuthenticationForClients()
                 .addTokenEndpointAuthenticationFilter(filter);
     }
 
