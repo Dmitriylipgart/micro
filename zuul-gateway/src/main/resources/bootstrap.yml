@@ -7,3 +7,8 @@ eureka:
   client:
     healthcheck:
       enabled: true
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: token-key
