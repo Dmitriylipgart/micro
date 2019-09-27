@@ -72,7 +72,6 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
         tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer(), accessTokenConverter()));
 
         endpoints
-//                .pathMapping("/oauth/token", "/token")
                 .reuseRefreshTokens(false)
                 .tokenStore(redisTokenStore())
                 .tokenEnhancer(tokenEnhancerChain)

@@ -29,10 +29,9 @@ public class GatewayConfig extends ResourceServerConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .anyRequest().permitAll();
-//                .antMatchers("/oauth/**")
-//                .permitAll()
-//                .anyRequest().authenticated();
+                .antMatchers("/uaa/**")
+                .permitAll()
+                .anyRequest().authenticated();
     }
 
     @Bean

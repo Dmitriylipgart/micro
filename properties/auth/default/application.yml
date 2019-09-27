@@ -23,7 +23,9 @@ security:
       authorities: ROLE_TRUSTED_CLIENT
     resource:
       id: /oauth2
-      user-info-uri: http://localhost:8080/user/me
+      jwt:
+        key-value: token-key
+      token-info-uri: http://localhost:8088/uaa/check_token
 oauth2:
   token:
     key: token-key
